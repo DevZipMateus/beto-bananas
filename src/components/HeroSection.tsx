@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, ArrowRight } from 'lucide-react';
@@ -29,6 +28,12 @@ const HeroSection = () => {
     <section id="hero" ref={sectionRef} className="relative min-h-screen flex items-center justify-center pt-20">
       {/* Background with banana theme */}
       <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1604148482093-d55d6fc62400?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`
+          }}
+        ></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/30"></div>
         <div className="absolute inset-0 opacity-30" style={{
           backgroundImage: `radial-gradient(circle, rgba(255, 215, 0, 0.1) 2px, transparent 2px)`,
