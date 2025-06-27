@@ -42,7 +42,7 @@ const HeroSection = () => {
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight animate-slide-up [animation-delay:500ms]">
                 <span className="text-primary">Beto Bananas</span><br />
-                Seu Forte é <span className="text-primary font-normal">Bananas</span>
+                Seu Forte é <span className="text-primary">Bananas</span>
               </h1>
               
               <p className="text-lg md:text-xl mb-8 max-w-xl animate-slide-up [animation-delay:700ms] text-zinc-950">
