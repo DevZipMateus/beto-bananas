@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -51,7 +50,7 @@ const Header = () => {
             />
             <div>
               <h1 className="text-xl md:text-2xl font-display font-bold text-foreground">
-                <span className={`${isMobile ? 'text-blue-600' : 'text-primary'}`}>Beto</span> Bananas
+                <span className={`${isMobile ? 'text-[#008CDF]' : 'text-primary'}`}>Beto</span> Bananas
               </h1>
               <p className="text-xs text-muted-foreground hidden md:block">Frutas e Verduras</p>
             </div>
