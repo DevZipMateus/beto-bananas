@@ -79,10 +79,7 @@ const HeroSection = () => {
                   <img src="/lovable-uploads/5dfbe546-aade-4fbf-8d0f-b350c37481d8.png" alt="Beto Bananas - Mascote" className="w-full h-auto animate-float" />
                 </div>
                 
-                <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-4">
-                  <h3 className="font-bold text-foreground mb-1">Qualidade Garantida</h3>
-                  <p className="text-sm text-muted-foreground">Bananas selecionadas com todo cuidado</p>
-                </div>
+                
               </div>
             </div>
           </div>
