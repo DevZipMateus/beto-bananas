@@ -30,7 +30,10 @@ const HeroSection = () => {
       {/* Background with banana theme */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/30"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fillRule=\"evenodd\"%3E%3Cg fill=\"%23FFD700\" fillOpacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"4\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: `radial-gradient(circle, rgba(255, 215, 0, 0.1) 2px, transparent 2px)`,
+          backgroundSize: '60px 60px'
+        }}></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
