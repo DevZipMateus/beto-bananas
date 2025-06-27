@@ -37,7 +37,7 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'py-3 bg-background/95 backdrop-blur-md shadow-nav' 
+          ? 'py-3 bg-black/10 backdrop-blur-md shadow-nav' 
           : 'py-4 bg-transparent'
       }`}
     >
