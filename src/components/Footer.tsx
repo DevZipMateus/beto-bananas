@@ -13,50 +13,44 @@ const Footer = () => {
   return (
     <footer className="bg-secondary-foreground text-white py-16">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold mb-4">
-              <span className="text-primary">AgroTech</span> Implementos
-            </h3>
-            <p className="text-white/80 max-w-xs">
-              Soluções completas em implementos agrícolas, máquinas e equipamentos para o agronegócio.
-            </p>
-            <div className="flex space-x-4 mt-6">
-              <FooterSocialLink href="#" aria-label="Facebook" />
-              <FooterSocialLink href="#" aria-label="Instagram" />
-              <FooterSocialLink href="#" aria-label="LinkedIn" />
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/lovable-uploads/5dfbe546-aade-4fbf-8d0f-b350c37481d8.png" 
+                alt="Beto Bananas Logo" 
+                className="h-12 w-auto"
+              />
+              <div>
+                <h3 className="text-xl font-bold">
+                  <span className="text-primary">Beto</span> Bananas
+                </h3>
+                <p className="text-white/80 text-sm">Frutas e Verduras</p>
+              </div>
             </div>
+            <p className="text-white/80 max-w-xs">
+              Reichert Comércio de Frutas e Verduras - Especialistas em bananas Caturra e Prata de alta qualidade.
+            </p>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Links Rápidos</h4>
             <ul className="space-y-2">
               <FooterNavItem href="#hero">Início</FooterNavItem>
-              <FooterNavItem href="#categories">Produtos</FooterNavItem>
-              <FooterNavItem href="#brands">Marcas</FooterNavItem>
-              <FooterNavItem href="#about">Sobre Nós</FooterNavItem>
-              <FooterNavItem href="#contact">Contato</FooterNavItem>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Categorias</h4>
-            <ul className="space-y-2">
-              <FooterNavItem href="#categories">Máquinas e Tratores</FooterNavItem>
-              <FooterNavItem href="#categories">Sementes e Mudas</FooterNavItem>
-              <FooterNavItem href="#categories">Defensivos e Fertilizantes</FooterNavItem>
-              <FooterNavItem href="#categories">Peças e Assistência</FooterNavItem>
+              <FooterNavItem href="#sobre">Sobre</FooterNavItem>
+              <FooterNavItem href="#produtos">Produtos</FooterNavItem>
+              <FooterNavItem href="#localizacao">Localização</FooterNavItem>
+              <FooterNavItem href="#contato">Contato</FooterNavItem>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Contato</h4>
             <ul className="space-y-3 text-white/80">
-              <li>(11) 3456-7890</li>
-              <li>contato@agrotechimplementos.com.br</li>
-              <li>Rod. BR-163, Km 85, Campo Grande - MS</li>
-              <li>Segunda a Sexta, 7h às 17h</li>
-              <li>Sábado, 8h às 12h</li>
+              <li>(47) 98863-8192</li>
+              <li>reichertclaudiney992@gmail.com</li>
+              <li>Rua Teodoro Reichert, 576</li>
+              <li>Braço do Baú, Ilhota - SC</li>
             </ul>
           </div>
         </div>
@@ -65,14 +59,14 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/70 text-sm">
-            © {new Date().getFullYear()} AgroTech Implementos. Todos os direitos reservados.
+            © {new Date().getFullYear()} Beto Bananas - Reichert Comércio de Frutas e Verduras. Todos os direitos reservados.
           </p>
           <div className="mt-4 md:mt-0">
             <Button
               onClick={scrollToTop}
               variant="outline"
               size="icon"
-              className="rounded-full bg-primary/80 border-primary/20 hover:bg-primary/90 text-white"
+              className="rounded-full bg-primary/80 border-primary/20 hover:bg-primary/90 text-primary-foreground"
             >
               <ChevronUp className="h-5 w-5" />
             </Button>
@@ -97,18 +91,6 @@ const FooterNavItem = ({ href, children }: FooterNavItemProps) => (
       {children}
     </a>
   </li>
-);
-
-interface FooterSocialLinkProps {
-  href: string;
-  'aria-label': string;
-}
-
-const FooterSocialLink = (props: FooterSocialLinkProps) => (
-  <a
-    {...props}
-    className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20 hover:bg-primary/80 transition-colors duration-200"
-  />
 );
 
 export default Footer;

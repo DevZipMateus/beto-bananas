@@ -2,11 +2,9 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import CategoriesSection from '@/components/CategoriesSection';
-import FeaturedProducts from '@/components/FeaturedProducts';
-import BrandsSection from '@/components/BrandsSection';
 import AboutSection from '@/components/AboutSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
+import ProductsSection from '@/components/ProductsSection';
+import LocationSection from '@/components/LocationSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -35,11 +33,9 @@ const Index = () => {
     <div className="overflow-x-hidden">
       <Header />
       <HeroSection />
-      <CategoriesSection />
-      <FeaturedProducts />
-      <BrandsSection />
       <AboutSection />
-      <TestimonialsSection />
+      <ProductsSection />
+      <LocationSection />
       <ContactSection />
       <Footer />
       <WhatsAppButton />
