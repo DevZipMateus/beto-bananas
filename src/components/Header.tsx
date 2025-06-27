@@ -37,7 +37,7 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'py-3 bg-black/10 backdrop-blur-md shadow-nav' 
+          ? 'py-3 bg-white/95 backdrop-blur-md shadow-nav' 
           : 'py-4 bg-transparent'
       }`}
     >
@@ -51,7 +51,7 @@ const Header = () => {
             />
             <div>
               <h1 className="text-xl md:text-2xl font-display font-bold text-foreground">
-                <span className="text-primary">Beto</span> Bananas
+                <span className={`${isMobile ? 'text-blue-600' : 'text-primary'}`}>Beto</span> Bananas
               </h1>
               <p className="text-xs text-muted-foreground hidden md:block">Frutas e Verduras</p>
             </div>
