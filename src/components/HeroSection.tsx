@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, ArrowRight } from 'lucide-react';
@@ -60,7 +61,7 @@ const HeroSection = () => {
                 </Button>
               </div>
 
-              <div className="flex items-center space-x-8 text-muted-foreground text-sm animate-slide-up [animation-delay:1100ms]">
+              <div className="flex items-center space-x-8 text-white text-sm animate-slide-up [animation-delay:1100ms]">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
                   Bananas Caturra e Prata
