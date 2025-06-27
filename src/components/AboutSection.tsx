@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, Heart, Star, Truck } from 'lucide-react';
+import { Check, Target, Heart, Award } from 'lucide-react';
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -27,18 +27,18 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="sobre" ref={sectionRef} className="section-padding bg-white">
+    <section id="about" ref={sectionRef} className="section-padding bg-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 animate-on-scroll">
             Sobre Nós
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Reichert Comércio de Frutas e Verduras
+            Tecnologia e Experiência para o Sucesso do seu Agronegócio
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Com tradição familiar e comprometimento com a qualidade, oferecemos as melhores bananas 
-            Caturra e Prata da região de Ilhota, Santa Catarina.
+            Mais que uma distribuidora de implementos, somos um parceiro estratégico comprometido com
+            a produtividade e crescimento sustentável da sua propriedade rural.
           </p>
         </div>
 
@@ -46,19 +46,20 @@ const AboutSection = () => {
           <div className="space-y-6">
             <div className="animate-on-scroll">
               <h3 className="text-2xl font-bold mb-4">
-                Nosso Forte é <span className="text-primary">Bananas</span>
+                Conte com a AgroTech Implementos
               </h3>
               <p className="text-muted-foreground mb-6">
-                A Reichert Comércio de Frutas e Verduras se dedica há anos ao cultivo e comercialização 
-                de bananas de alta qualidade. Especializados em variedades Caturra e Prata, garantimos 
-                frutas frescas, saborosas e nutritivas para nossos clientes.
+                Desde 2008, fornecemos soluções completas em implementos agrícolas para propriedades
+                de todos os tamanhos. Nossa abordagem combina expertise técnica com um atendimento
+                personalizado, garantindo que cada cliente receba os melhores equipamentos e
+                orientações adequadas às suas necessidades específicas de produção.
               </p>
               <ul className="space-y-3">
                 {[
-                  'Bananas Caturra de primeira qualidade',
-                  'Bananas Prata selecionadas',
-                  'Frutas frescas direto do produtor',
-                  'Compromisso com a qualidade e frescor'
+                  'Equipe técnica especializada em agronegócio',
+                  'Amplo portfólio de marcas líderes do mercado',
+                  'Assistência técnica qualificada e peças originais',
+                  'Atendimento personalizado e suporte pós-venda'
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -71,24 +72,24 @@ const AboutSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <AboutCard 
-              icon={<Star className="h-10 w-10 text-primary" />}
-              title="Qualidade Superior"
-              description="Bananas selecionadas uma a uma, garantindo sempre o melhor produto para nossos clientes."
+              icon={<Target className="h-10 w-10 text-primary" />}
+              title="Missão"
+              description="Fornecer implementos agrícolas de qualidade superior, oferecendo soluções completas que maximizam a produtividade e rentabilidade de nossos clientes no agronegócio."
             />
             <AboutCard 
               icon={<Heart className="h-10 w-10 text-primary" />}
-              title="Tradição Familiar"
-              description="Empresa familiar com valores sólidos, tratando cada cliente com carinho e dedicação."
+              title="Visão"
+              description="Ser reconhecida como a principal distribuidora de implementos agrícolas do Centro-Oeste, criando parcerias duradouras baseadas em confiança e resultados."
             />
             <AboutCard 
-              icon={<Truck className="h-10 w-10 text-primary" />}
-              title="Entrega Rápida"
-              description="Logística eficiente para garantir que suas bananas cheguem sempre frescas e no prazo."
+              icon={<Award className="h-10 w-10 text-primary" />}
+              title="Valores"
+              description="Comprometimento com a qualidade, inovação tecnológica, sustentabilidade, ética nos negócios e excelência no atendimento ao produtor rural."
             />
             <AboutCard 
               icon={<Check className="h-10 w-10 text-primary" />}
-              title="Compromisso"
-              description="Comprometidos com a satisfação dos clientes e a qualidade de nossos produtos."
+              title="Diferenciais"
+              description="Assistência técnica especializada, estoque completo, entrega rápida, financiamento facilitado e equipe com conhecimento prático do campo."
             />
           </div>
         </div>

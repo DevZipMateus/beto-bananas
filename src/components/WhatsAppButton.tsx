@@ -22,7 +22,7 @@ const WhatsAppButton = () => {
   }, []);
 
   const handleOpenWhatsApp = () => {
-    window.open('https://wa.me/5547988638192?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20de%20bananas.', '_blank');
+    window.open('https://wa.me/5511987654321?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20contábeis.', '_blank');
     setIsOpen(false);
   };
 
@@ -33,7 +33,7 @@ const WhatsAppButton = () => {
       {isOpen && (
         <div className="mb-4 bg-white rounded-lg shadow-lg p-4 max-w-xs service-card animate-slide-up">
           <div className="flex justify-between items-center mb-3">
-            <h3 className="font-bold text-gray-800">Precisa de bananas?</h3>
+            <h3 className="font-bold text-gray-800">Precisa de ajuda?</h3>
             <button 
               onClick={() => setIsOpen(false)}
               className="text-gray-500 hover:text-gray-700"
@@ -42,7 +42,7 @@ const WhatsAppButton = () => {
             </button>
           </div>
           <p className="text-gray-600 text-sm mb-3">
-            Olá! Faça seu pedido de bananas Caturra e Prata fresquinhas pelo WhatsApp.
+            Olá! Estamos aqui para ajudar com suas dúvidas sobre serviços contábeis.
           </p>
           <button
             onClick={handleOpenWhatsApp}
@@ -53,7 +53,7 @@ const WhatsAppButton = () => {
               alt="WhatsApp" 
               className="w-5 h-5 mr-2" 
             />
-            Fazer Pedido
+            Iniciar conversa
           </button>
         </div>
       )}

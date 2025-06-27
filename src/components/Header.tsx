@@ -30,31 +30,23 @@ const Header = () => {
   }, []);
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5547988638192?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20bananas%20disponíveis.', '_blank');
+    window.open('https://wa.me/5567987654321?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20implementos%20agrícolas.', '_blank');
   };
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'py-3 bg-black/10 backdrop-blur-md shadow-nav' 
+          ? 'py-3 bg-background/95 backdrop-blur-md shadow-nav' 
           : 'py-4 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
-          <a href="#" className="relative z-20 flex items-center gap-3">
-            <img 
-              src="/lovable-uploads/5dfbe546-aade-4fbf-8d0f-b350c37481d8.png" 
-              alt="Beto Bananas Logo" 
-              className="h-12 w-auto"
-            />
-            <div>
-              <h1 className="text-xl md:text-2xl font-display font-bold text-foreground">
-                <span className="text-primary">Beto</span> Bananas
-              </h1>
-              <p className="text-xs text-muted-foreground hidden md:block">Frutas e Verduras</p>
-            </div>
+          <a href="#" className="relative z-20">
+            <h1 className="text-xl md:text-2xl font-display font-bold text-foreground">
+              <span className="text-primary">AgroTech</span> Implementos
+            </h1>
           </a>
 
           {/* Desktop Menu */}
@@ -66,7 +58,7 @@ const Header = () => {
           <div className="hidden md:flex items-center">
             <Button 
               onClick={handleWhatsAppClick}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               Solicitar Orçamento
             </Button>
@@ -110,10 +102,10 @@ interface NavLinksProps {
 const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
   const links = [
     { name: 'Início', href: '#hero' },
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'Produtos', href: '#produtos' },
-    { name: 'Localização', href: '#localizacao' },
-    { name: 'Contato', href: '#contato' },
+    { name: 'Produtos', href: '#products' },
+    { name: 'Marcas', href: '#brands' },
+    { name: 'Sobre Nós', href: '#about' },
+    { name: 'Contato', href: '#contact' },
   ];
 
   return (

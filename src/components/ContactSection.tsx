@@ -1,8 +1,6 @@
-
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Phone, Mail, MessageCircle, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Linkedin, Facebook, Instagram } from 'lucide-react';
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -27,166 +25,171 @@ const ContactSection = () => {
     };
   }, []);
 
-  const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5547988638192?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20de%20bananas.', '_blank');
-  };
-
-  const handleCallClick = () => {
-    window.open('tel:+5547988638192', '_self');
-  };
-
-  const handleEmailClick = () => {
-    window.open('mailto:reichertclaudiney992@gmail.com', '_self');
-  };
+  const contactInfo = [
+    {
+      icon: <Phone className="h-5 w-5 text-primary" />,
+      title: "Telefone",
+      details: "(67) 3345-6789",
+      link: "tel:+556733456789"
+    },
+    {
+      icon: <Mail className="h-5 w-5 text-primary" />,
+      title: "E-mail",
+      details: "vendas@agrotechimplementos.com.br",
+      link: "mailto:vendas@agrotechimplementos.com.br"
+    },
+    {
+      icon: <MapPin className="h-5 w-5 text-primary" />,
+      title: "Endereço",
+      details: "Rod. BR-163, Km 85, Campo Grande - MS",
+      link: "https://maps.google.com"
+    },
+    {
+      icon: <Clock className="h-5 w-5 text-primary" />,
+      title: "Horário",
+      details: "Segunda a Sexta, 7h às 17h | Sábado, 8h às 12h",
+      link: null
+    }
+  ];
 
   return (
-    <section id="contato" ref={sectionRef} className="section-padding bg-gradient-to-br from-primary/5 to-accent/5">
-      <div className="container mx-auto">
+    <section id="contact" ref={sectionRef} className="section-padding bg-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+      
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 animate-on-scroll">
             Entre em Contato
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Faça seu Pedido
+            Estamos Prontos para Atender Você
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Entre em contato conosco para fazer seu pedido de bananas frescas e de qualidade. 
-            Estamos prontos para atender você!
+            Entre em contato conosco para orçamentos, assistência técnica ou informações sobre nossos implementos agrícolas.
+            Nossa equipe especializada está à disposição para ajudar no crescimento da sua propriedade rural.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="animate-on-scroll">
-                <h3 className="text-2xl font-bold mb-6">Fale Conosco</h3>
-                <p className="text-muted-foreground mb-8">
-                  Escolha a forma mais conveniente para entrar em contato conosco. 
-                  Garantimos atendimento rápido e personalizado para todos os nossos clientes.
-                </p>
+        <div className="max-w-6xl mx-auto">
+          <Card className="border border-border/50 shadow-card animate-on-scroll">
+            <CardContent className="p-8">
+              <div className="grid md:grid-cols-2 gap-10">
+                <div>
+                  <h3 className="text-2xl font-bold mb-6">Informações de Contato</h3>
+                  <p className="text-muted-foreground mb-8">
+                    Para solicitar orçamentos de implementos, agendar assistência técnica ou conhecer nossos produtos,
+                    utilize um dos canais de atendimento abaixo. Atendemos produtores rurais de todo o Centro-Oeste.
+                  </p>
+                  
+                  <div className="space-y-6 mb-8">
+                    {contactInfo.map((item, index) => (
+                      <ContactInfoItem 
+                        key={index}
+                        icon={item.icon}
+                        title={item.title}
+                        details={item.details}
+                        link={item.link}
+                      />
+                    ))}
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-medium mb-4">Siga-nos</h4>
+                    <div className="flex space-x-3">
+                      <SocialLink icon={<Facebook size={20} />} href="#" label="Facebook" />
+                      <SocialLink icon={<Instagram size={20} />} href="#" label="Instagram" />
+                      <SocialLink icon={<Linkedin size={20} />} href="#" label="LinkedIn" />
+                    </div>
+                  </div>
+                </div>
                 
-                <div className="space-y-4">
-                  <ContactMethod 
-                    icon={<Phone className="h-6 w-6" />}
-                    title="Telefone"
-                    description="Ligue agora para fazer seu pedido"
-                    contact="(47) 98863-8192"
-                    action={handleCallClick}
-                    buttonText="Ligar Agora"
-                    buttonClass="bg-accent hover:bg-accent/90 text-accent-foreground"
-                  />
-                  
-                  <ContactMethod 
-                    icon={<MessageCircle className="h-6 w-6" />}
-                    title="WhatsApp"
-                    description="Conversa rápida pelo WhatsApp"
-                    contact="(47) 98863-8192"
-                    action={handleWhatsAppClick}
-                    buttonText="Chamar no WhatsApp"
-                    buttonClass="bg-green-500 hover:bg-green-600 text-white"
-                  />
-                  
-                  <ContactMethod 
-                    icon={<Mail className="h-6 w-6" />}
-                    title="E-mail"
-                    description="Envie um e-mail para nós"
-                    contact="reichertclaudiney992@gmail.com"
-                    action={handleEmailClick}
-                    buttonText="Enviar E-mail"
-                    buttonClass="bg-primary hover:bg-primary/90 text-primary-foreground"
-                  />
+                <div className="flex items-center justify-center">
+                  <div className="text-center p-6 bg-primary/5 rounded-xl max-w-md">
+                    <div className="mb-4 text-primary">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mx-auto">
+                        <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" />
+                        <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Prefere atendimento via WhatsApp?</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Clique no botão do WhatsApp no canto inferior direito da tela para falar diretamente com nossos especialistas em implementos agrícolas e receber atendimento personalizado.
+                    </p>
+                    <div className="text-sm text-muted-foreground">
+                      Tempo médio de resposta: <span className="font-medium text-foreground">15 minutos</span>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-16 animate-on-scroll">
+          <Card className="border border-border/50 shadow-card overflow-hidden">
+            <div className="h-[400px] w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3739.123456789!2d-54.6164919!3d-20.4629581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e1b123456789%3A0x123456789abcdef!2sBR-163%2C%20Campo%20Grande%20-%20MS!5e0!3m2!1spt-BR!2sbr!4v1627909542948!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                title="Mapa de localização - AgroTech Implementos"
+              ></iframe>
             </div>
-            
-            <div className="animate-on-scroll">
-              <Card className="border border-border/50 shadow-card">
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <div className="text-6xl mb-4">🍌</div>
-                    <h3 className="text-2xl font-bold mb-2">Beto Bananas</h3>
-                    <p className="text-muted-foreground">
-                      Reichert Comércio de Frutas e Verduras
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-4 text-sm">
-                    <div className="flex items-center gap-3">
-                      <MapPin className="h-5 w-5 text-primary" />
-                      <div>
-                        <p className="font-medium">Endereço:</p>
-                        <p className="text-muted-foreground">
-                          Rua Teodoro Reichert, 576<br />
-                          Braço do Baú, Ilhota - SC
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <Phone className="h-5 w-5 text-primary" />
-                      <div>
-                        <p className="font-medium">Telefone:</p>
-                        <p className="text-muted-foreground">(47) 98863-8192</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <Mail className="h-5 w-5 text-primary" />
-                      <div>
-                        <p className="font-medium">E-mail:</p>
-                        <p className="text-muted-foreground">reichertclaudiney992@gmail.com</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-8 pt-6 border-t border-border">
-                    <Button 
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground cta-button"
-                      onClick={handleWhatsAppClick}
-                    >
-                      Fazer Pedido Agora
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+          </Card>
         </div>
       </div>
     </section>
   );
 };
 
-interface ContactMethodProps {
+interface ContactInfoItemProps {
   icon: React.ReactNode;
   title: string;
-  description: string;
-  contact: string;
-  action: () => void;
-  buttonText: string;
-  buttonClass: string;
+  details: string;
+  link: string | null;
 }
 
-const ContactMethod = ({ icon, title, description, contact, action, buttonText, buttonClass }: ContactMethodProps) => (
-  <Card className="border border-border/50 shadow-card">
-    <CardContent className="p-6">
-      <div className="flex items-start gap-4">
-        <div className="text-primary">{icon}</div>
-        <div className="flex-1">
-          <h4 className="font-semibold mb-1">{title}</h4>
-          <p className="text-sm text-muted-foreground mb-2">{description}</p>
-          <p className="text-sm font-medium mb-4">{contact}</p>
-          <Button 
-            size="sm" 
-            className={buttonClass}
-            onClick={action}
-          >
-            {buttonText}
-          </Button>
-        </div>
+const ContactInfoItem = ({ icon, title, details, link }: ContactInfoItemProps) => {
+  const content = (
+    <div className="flex">
+      <div className="flex-shrink-0 mr-3 mt-1">{icon}</div>
+      <div>
+        <h4 className="font-medium">{title}</h4>
+        <p className="text-muted-foreground mt-1">{details}</p>
       </div>
-    </CardContent>
-  </Card>
+    </div>
+  );
+
+  if (link) {
+    return (
+      <a href={link} className="block hover:text-primary transition-colors">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
+};
+
+interface SocialLinkProps {
+  icon: React.ReactNode;
+  href: string;
+  label: string;
+}
+
+const SocialLink = ({ icon, href, label }: SocialLinkProps) => (
+  <a
+    href={href}
+    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
+    aria-label={label}
+  >
+    {icon}
+  </a>
 );
 
 export default ContactSection;
