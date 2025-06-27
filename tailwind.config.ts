@@ -20,8 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['Playfair Display', 'serif'],
+				sans: ['Poppins', 'sans-serif'],
+				display: ['Fredoka', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -66,6 +66,30 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				banana: {
+					50: '#FFFBEB',
+					100: '#FEF3C7',
+					200: '#FDE68A',
+					300: '#FCD34D',
+					400: '#FBBF24',
+					500: '#F59E0B',
+					600: '#D97706',
+					700: '#B45309',
+					800: '#92400E',
+					900: '#78350F',
+				},
+				blue: {
+					50: '#EFF6FF',
+					100: '#DBEAFE',
+					200: '#BFDBFE',
+					300: '#93C5FD',
+					400: '#60A5FA',
+					500: '#3B82F6',
+					600: '#2563EB',
+					700: '#1D4ED8',
+					800: '#1E3A8A',
+					900: '#1E40AF',
 				}
 			},
 			borderRadius: {
@@ -117,6 +141,16 @@ export default {
 				'spin-slow': {
 					from: { transform: 'rotate(0deg)' },
 					to: { transform: 'rotate(360deg)' }
+				},
+				bounce: {
+					'0%, 100%': {
+						transform: 'translateY(-25%)',
+						animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+					},
+					'50%': {
+						transform: 'translateY(0)',
+						animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+					}
 				}
 			},
 			animation: {
@@ -128,18 +162,20 @@ export default {
 				'slide-in-right': 'slideInRight 0.7s ease-out forwards',
 				'float': 'float 5s ease-in-out infinite',
 				'pulse': 'pulse 3s ease-in-out infinite',
-				'spin-slow': 'spin-slow 8s linear infinite'
+				'spin-slow': 'spin-slow 8s linear infinite',
+				'bounce': 'bounce 1s infinite'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'hero-pattern': 'linear-gradient(to right bottom, rgba(7, 33, 66, 0.8), rgba(44, 83, 131, 0.8))',
-				'service-gradient': 'linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%)',
+				'hero-pattern': 'linear-gradient(to right bottom, rgba(255, 215, 0, 0.8), rgba(30, 144, 255, 0.8))',
+				'banana-gradient': 'linear-gradient(90deg, #FFD700 0%, #FFA500 100%)',
 			},
 			boxShadow: {
 				'elegant': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
 				'card': '0 5px 15px rgba(0, 0, 0, 0.03), 0 2px 5px rgba(0, 0, 0, 0.02)',
 				'button': '0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08)',
 				'nav': '0 10px 40px rgba(0, 0, 0, 0.06)',
+				'banana': '0 10px 30px rgba(255, 215, 0, 0.15)',
 			},
 			transitionDuration: {
 				'2000': '2000ms',
